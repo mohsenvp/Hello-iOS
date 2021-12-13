@@ -35,14 +35,7 @@ class LoginViewController: MasterViewController {
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.setValue(CloudApplicationKeys.appID.rawValue, forHTTPHeaderField: "X-Parse-Application-Id")
-//        request.setValue(CloudApplicationKeys.restKey.rawValue, forHTTPHeaderField: "X-Parse-REST-API-Key")
-//
-//        request.setValue(sessionToken, forHTTPHeaderField: "X-Parse-Session-Token")
-        
-//        let jsonData = try? JSONEncoder().encode(parameters)
-//        request.httpBody = jsonData
-        
+
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.timeoutIntervalForRequest = 30.0
         sessionConfig.timeoutIntervalForResource = 30.0
@@ -99,33 +92,6 @@ class LoginViewController: MasterViewController {
 //            }
         }
         task.resume()
-    
-//        APIManager.postObject(url : "https://wpt.woocer.com/wp-json/wc/v3/products?consumer_key=ck_85f212310cfff32728cc4c933331aa6bcf3002ef&consumer_secret=cs_ee784168289012a919a008985d2252fadecea2bb")
-//        let url = URL(string: "https://wpt.woocer.com/wp-json/wc/v3/products?consumer_key=ck_85f212310cfff32728cc4c933331aa6bcf3002ef&consumer_secret=cs_ee784168289012a919a008985d2252fadecea2bb")! //PUT Your URL
-//                var request = URLRequest(url: url)
-//                request.httpMethod = "GET"
-//                let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//                    guard let safeData = data,
-//                          let response = response as? HTTPURLResponse,
-//                          error == nil else {                                              // check for fundamental networking error
-//                              print("error", error ?? "Unknown error")
-////                              delegate?.onError(error!)
-//                              return
-//                          }
-//
-//                    guard (200 ... 299) ~= response.statusCode else {                    // check for http errors
-//                        print("statusCode should be 2xx, but is \(response.statusCode)")
-//                        print("response = \(response)")
-//                        return
-//                    }
-//
-//                    if let responseString = String(data: safeData, encoding: .utf8){
-//                        print("Response String = \(responseString)")
-//
-//                    }
-//                }
-//
-//                task.resume()
     }
     
 }

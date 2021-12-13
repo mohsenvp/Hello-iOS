@@ -8,20 +8,12 @@
 import Foundation
 
 class APIManager{
-    func postObject<T: Encodable>(url: String, parameters: T? = nil, completionHandler: @escaping (Bool, String? , Data?) -> Void){
-        
-        let url = URL(string: url)
+    func postObject<T: Encodable, U: Decodable>(url: String, model: U.Type, parameters: T, completionHandler: @escaping (Result<U, RequestError>) -> Void){
+        let url = URL(string: "https://wpt.woocer.com/wp-json/wc/v3/products?consumer_key=ck_85f212310cfff32728cc4c933331aa6bcf3002ef&consumer_secret=cs_ee784168289012a919a008985d2252fadecea2bb")
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.setValue(CloudApplicationKeys.appID.rawValue, forHTTPHeaderField: "X-Parse-Application-Id")
-//        request.setValue(CloudApplicationKeys.restKey.rawValue, forHTTPHeaderField: "X-Parse-REST-API-Key")
-//
-//        request.setValue(sessionToken, forHTTPHeaderField: "X-Parse-Session-Token")
-        
-        let jsonData = try? JSONEncoder().encode(parameters)
-        request.httpBody = jsonData
-        
+
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.timeoutIntervalForRequest = 30.0
         sessionConfig.timeoutIntervalForResource = 30.0
@@ -32,14 +24,37 @@ class APIManager{
             if let httpResponse = response as? HTTPURLResponse {
                 switch httpResponse.statusCode {
                 case 200:
-                    completionHandler(false, nil, data)
+                    if let data = data{
+                        do {
+                            let dataString = String(data: data, encoding: .utf8)
+                            let jsondata = dataString?.data(using: .utf8)
+                            let result = try JSONDecoder().decode([ProductsDataModel].self, from: jsondata!)
+                            print(result[0].id)
+//                            completionHandler(.success(result as! U))
+                            
+                        } catch let error {
+                            completionHandler(.failure(.badError))
+                            print("Localized Error: \(error.localizedDescription)")
+                            print("Error: \(error)")
+                        }
+//                        if let jsonResult = try? JSONDecoder().decode(WelcomeElement.self, from: data){
+//                            print(jsonResult)
+////                            completionHandler(.success(jsonResult))
+//                        }else{
+////                            completionHandler(.failure(.badJson))
+//                        }
+                    }
+                    break
+//                    completionHandler(false, nil, data)
                 case 400:
+                    break
                     
-                    completionHandler(true, "error" , nil)
+//                    completionHandler(true, "error" , nil)
                     
                     
                 default:
-                    completionHandler(true, "error" , nil)
+                    break
+//                    completionHandler(true, "error" , nil)
                 }
             }
             

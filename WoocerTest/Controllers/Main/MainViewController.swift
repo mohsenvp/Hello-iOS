@@ -29,7 +29,7 @@ class MainViewController: MasterViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 160
     }
 
     @IBOutlet weak var tabelView: UITableView!

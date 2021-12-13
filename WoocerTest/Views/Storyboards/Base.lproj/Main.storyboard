@@ -18,11 +18,11 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="n5K-aw-X1V">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.10980392160000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.1803921568627451" green="0.19215686274509802" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="n5K-aw-X1V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="44d-lN-pbQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n5K-aw-X1V" secondAttribute="trailing" id="aqs-p6-ybY"/>
@@ -30,13 +30,29 @@
                             <constraint firstItem="n5K-aw-X1V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zPg-ZZ-XEI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xK5-I9-2ir"/>
                     <connections>
                         <outlet property="tabelView" destination="n5K-aw-X1V" id="bXJ-Ca-7SI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="58"/>
+            <point key="canvasLocation" x="944.92753623188412" y="57.589285714285708"/>
+        </scene>
+        <!--Product Details View Controller-->
+        <scene sceneID="w8h-SF-Acd">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetailsViewController" id="VXR-bo-WaZ" customClass="ProductDetailsViewController" customModule="WoocerTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tPf-4o-KOc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VCa-Fn-2P2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hQ3-0P-I7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1676.8115942028987" y="57.589285714285708"/>
         </scene>
     </scenes>
     <resources>

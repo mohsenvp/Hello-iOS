@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82373683276795C800C4B9D1 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82373682276795C800C4B9D1 /* ProductDetailsViewController.swift */; };
+		8237368627679F1500C4B9D1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8237368527679F1500C4B9D1 /* UIView.swift */; };
 		82923245276782B900C2F54B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82923244276782B900C2F54B /* UIImage.swift */; };
 		82B392392766548F00445135 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B392382766548F00445135 /* AppDelegate.swift */; };
 		82B3923B2766548F00445135 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3923A2766548F00445135 /* SceneDelegate.swift */; };
@@ -24,9 +26,14 @@
 		82B39269276693A700445135 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B39268276693A700445135 /* Storyboards.swift */; };
 		82B3926D27669E0500445135 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3926B27669E0500445135 /* ProductTableViewCell.swift */; };
 		82B3926E27669E0500445135 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82B3926C27669E0500445135 /* ProductTableViewCell.xib */; };
+		C89F91E9EB43161CA8155105 /* Pods_WoocerTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10A6913CE304F8EE049DB5F /* Pods_WoocerTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52B123AE83FC01803B73EEB6 /* Pods-WoocerTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoocerTest.debug.xcconfig"; path = "Target Support Files/Pods-WoocerTest/Pods-WoocerTest.debug.xcconfig"; sourceTree = "<group>"; };
+		7352E9AAEB3AD9831E829BB8 /* Pods-WoocerTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoocerTest.release.xcconfig"; path = "Target Support Files/Pods-WoocerTest/Pods-WoocerTest.release.xcconfig"; sourceTree = "<group>"; };
+		82373682276795C800C4B9D1 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		8237368527679F1500C4B9D1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		82923244276782B900C2F54B /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		82B392352766548F00445135 /* WoocerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoocerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B392382766548F00445135 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +53,7 @@
 		82B39268276693A700445135 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		82B3926B27669E0500445135 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		82B3926C27669E0500445135 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		E10A6913CE304F8EE049DB5F /* Pods_WoocerTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoocerTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +61,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C89F91E9EB43161CA8155105 /* Pods_WoocerTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A4869AAEFEE3FD2EC7F93A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				52B123AE83FC01803B73EEB6 /* Pods-WoocerTest.debug.xcconfig */,
+				7352E9AAEB3AD9831E829BB8 /* Pods-WoocerTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6F8C4363DABC03CEADD936E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E10A6913CE304F8EE049DB5F /* Pods_WoocerTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82373684276795F700C4B9D1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				82B3923C2766548F00445135 /* MainViewController.swift */,
+				82373682276795C800C4B9D1 /* ProductDetailsViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		82B3922C2766548F00445135 = {
 			isa = PBXGroup;
 			children = (
 				82B392372766548F00445135 /* WoocerTest */,
 				82B392362766548F00445135 /* Products */,
+				5A4869AAEFEE3FD2EC7F93A1 /* Pods */,
+				6F8C4363DABC03CEADD936E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,8 +157,8 @@
 		82B3924F276654E600445135 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				82373684276795F700C4B9D1 /* Main */,
 				82B3925A276657BD00445135 /* Login */,
-				82B3923C2766548F00445135 /* MainViewController.swift */,
 				82B3925D27665B0200445135 /* MasterViewController.swift */,
 			);
 			path = Controllers;
@@ -158,6 +196,7 @@
 				82B39258276655D000445135 /* TextFields.swift */,
 				82B39268276693A700445135 /* Storyboards.swift */,
 				82923244276782B900C2F54B /* UIImage.swift */,
+				8237368527679F1500C4B9D1 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,9 +234,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82B392492766549000445135 /* Build configuration list for PBXNativeTarget "WoocerTest" */;
 			buildPhases = (
+				3AEF5E74A83D8C070332935A /* [CP] Check Pods Manifest.lock */,
 				82B392312766548F00445135 /* Sources */,
 				82B392322766548F00445135 /* Frameworks */,
 				82B392332766548F00445135 /* Resources */,
+				8DEFB993EB385F6809CE7E3A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,6 +297,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3AEF5E74A83D8C070332935A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WoocerTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DEFB993EB385F6809CE7E3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WoocerTest/Pods-WoocerTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WoocerTest/Pods-WoocerTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WoocerTest/Pods-WoocerTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		82B392312766548F00445135 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -270,6 +353,8 @@
 				82B39269276693A700445135 /* Storyboards.swift in Sources */,
 				82B3926D27669E0500445135 /* ProductTableViewCell.swift in Sources */,
 				82B392652766807100445135 /* Singelton.swift in Sources */,
+				82373683276795C800C4B9D1 /* ProductDetailsViewController.swift in Sources */,
+				8237368627679F1500C4B9D1 /* UIView.swift in Sources */,
 				82923245276782B900C2F54B /* UIImage.swift in Sources */,
 				82B39259276655D000445135 /* TextFields.swift in Sources */,
 				82B3926127665F8E00445135 /* APIManager.swift in Sources */,
@@ -416,6 +501,7 @@
 		};
 		82B3924A2766549000445135 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52B123AE83FC01803B73EEB6 /* Pods-WoocerTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -444,6 +530,7 @@
 		};
 		82B3924B2766549000445135 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7352E9AAEB3AD9831E829BB8 /* Pods-WoocerTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

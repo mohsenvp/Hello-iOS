@@ -61,9 +61,11 @@ class LoginViewController: MasterViewController {
                             print(result[0].id)
                             DispatchQueue.main.async {
                                 let mainvc = Storyboard.Main.viewController(identifier: "MainViewController") as? MainViewController
-                                mainvc!.modalPresentationStyle = .fullScreen
-                                mainvc?.productsData = result
-                                self.present(mainvc!, animated: true, completion: nil)
+                                let navController = UINavigationController(rootViewController: mainvc!)
+
+                                navController.modalPresentationStyle = .fullScreen
+                                mainvc!.productsData = result
+                                self.present(navController, animated: true, completion: nil)
                             }
                             
                         } catch let error {

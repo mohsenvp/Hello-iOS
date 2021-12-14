@@ -26,16 +26,31 @@ class ProductTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func configuration(productData : ProductsDataModel){
-        if let url = URL(string:productData.images[0].src){
-            self.productImage.load(url: url)
-           }
-        titleLabel.text = productData.name
-        descriptionLabel.text = productData.name
-        
-        inStockLabel.text = productData.stockQuantity ?? 0 > 0 ? "In Stock" : "Out Of Stuck"
-        inStockLabel.textColor = productData.stockQuantity ?? 0 > 0 ? .green : .red
-        priceLabel.text = productData.price
+    func configuration(_ offData : ProductRealmModel){
+//        if productData != nil {
+//            if let url = URL(string:productData.images[0].src){
+//                self.productImage.load(url: url)
+//               }
+//            titleLabel.text = productData.name
+//            descriptionLabel.text = productData.slug
+//
+//            inStockLabel.text = productData.stockQuantity ?? 0 > 0 ? "In Stock" : "Out Of Stuck"
+//            inStockLabel.textColor = productData.stockQuantity ?? 0 > 0 ? .green : .red
+//            priceLabel.text = productData.price
+            
+//        }else{
+            if let url = URL(string:offData.image){
+                self.productImage.load(url: url)
+               }
+            titleLabel.text = offData.name
+            descriptionLabel.text = offData.desc
+
+            inStockLabel.text = offData.stockQuantity ?? 0 > 0 ? "In Stock" : "Out Of Stuck"
+            inStockLabel.textColor = offData.stockQuantity ?? 0 > 0 ? .green : .red
+            priceLabel.text = offData.price
+//
+//        }
+
         
     }
     

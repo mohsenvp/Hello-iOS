@@ -6,6 +6,8 @@ target 'WoocerTest' do
   use_frameworks!
 
   # Pods for WoocerTest
-  pod 'Realm', '~> 10.20'
-
+  pod 'RealmSwift', '~> 10.20'
+  pod 'Swinject'
+  pod 'SwinjectAutoregistration'
+  pod 'SwinjectStoryboard'
 end

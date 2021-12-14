@@ -6,13 +6,24 @@
 //
 
 import Foundation
-
+import RealmSwift
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
-
-import Foundation
+class RealmList: Object {
+   let productsData = RealmSwift.List<ProductRealmModel>()
+}
+class ProductRealmModel: Object {
+    @objc dynamic var id = 0
+    @objc dynamic var name = ""
+    @objc dynamic var price = ""
+    @objc dynamic var stockQuantity = 0
+    @objc dynamic var desc = ""
+    @objc dynamic var image = ""
+    override static func primaryKey() -> String? {
+        return "id"
+    }    
+}
 
 // MARK: - WelcomeElement
 struct ProductsDataModel: Codable {

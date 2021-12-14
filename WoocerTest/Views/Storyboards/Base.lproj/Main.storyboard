@@ -16,22 +16,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="n5K-aw-X1V">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" red="0.12549019610000001" green="0.10980392160000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAm-fe-V65">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="n5K-aw-X1V">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                        <color key="backgroundColor" red="0.12549019610000001" green="0.10980392160000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="n5K-aw-X1V" firstAttribute="top" secondItem="bAm-fe-V65" secondAttribute="top" id="8Xb-dp-rO5"/>
+                                    <constraint firstAttribute="trailing" secondItem="n5K-aw-X1V" secondAttribute="trailing" id="CKE-EW-dUT"/>
+                                    <constraint firstItem="n5K-aw-X1V" firstAttribute="leading" secondItem="bAm-fe-V65" secondAttribute="leading" id="DT4-jU-rh6"/>
+                                    <constraint firstAttribute="bottom" secondItem="n5K-aw-X1V" secondAttribute="bottom" id="ebr-z3-8wV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.1803921568627451" green="0.19215686274509802" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="n5K-aw-X1V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="44d-lN-pbQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n5K-aw-X1V" secondAttribute="trailing" id="aqs-p6-ybY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="n5K-aw-X1V" secondAttribute="bottom" id="oTV-U6-Iuv"/>
-                            <constraint firstItem="n5K-aw-X1V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zPg-ZZ-XEI"/>
+                            <constraint firstItem="bAm-fe-V65" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Qzu-8T-ADm"/>
+                            <constraint firstAttribute="bottom" secondItem="bAm-fe-V65" secondAttribute="bottom" id="TmL-54-iuj"/>
+                            <constraint firstItem="bAm-fe-V65" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="efd-sI-NBE"/>
+                            <constraint firstAttribute="trailing" secondItem="bAm-fe-V65" secondAttribute="trailing" id="tXW-F7-Ejo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xK5-I9-2ir"/>
                     <connections>
+                        <outlet property="containView" destination="bAm-fe-V65" id="wYR-uk-dXv"/>
                         <outlet property="tabelView" destination="n5K-aw-X1V" id="bXJ-Ca-7SI"/>
                     </connections>
                 </viewController>

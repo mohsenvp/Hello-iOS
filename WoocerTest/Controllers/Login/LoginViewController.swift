@@ -16,6 +16,8 @@ class LoginViewController: MasterViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var loginButton: UIButton!
     
+    var fetcher: ProductsFetcher?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,67 +33,90 @@ class LoginViewController: MasterViewController {
         loginButton.tintColor = .white
     }
     @IBAction func loginButtonAction(_ sender: UIButton) {
-        let url = URL(string: "https://wpt.woocer.com/wp-json/wc/v3/products?consumer_key=ck_85f212310cfff32728cc4c933331aa6bcf3002ef&consumer_secret=cs_ee784168289012a919a008985d2252fadecea2bb")
-        var request = URLRequest(url: url!)
-        request.httpMethod = "GET"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let sessionConfig = URLSessionConfiguration.default
-        sessionConfig.timeoutIntervalForRequest = 30.0
-        sessionConfig.timeoutIntervalForResource = 30.0
-        let session = URLSession(configuration: sessionConfig)
         
-        let task = session.dataTask(with: request) { [self] data, response, error in
-            
-            if let httpResponse = response as? HTTPURLResponse {
-                switch httpResponse.statusCode {
-                case 200:
-                    if let data = data{
-                        do {
-                            let dataString = String(data: data, encoding: .utf8)
-                            let jsondata = dataString?.data(using: .utf8)
-                            let result = try JSONDecoder().decode([ProductsDataModel].self, from: jsondata!)
-                            print(result[0].id)
-                            DispatchQueue.main.async {
-                                let mainvc = Storyboard.Main.viewController(identifier: "MainViewController") as? MainViewController
-                                let navController = UINavigationController(rootViewController: mainvc!)
-
-                                navController.modalPresentationStyle = .fullScreen
-                                mainvc!.productsData = result
-                                self.present(navController, animated: true, completion: nil)
-                            }
-                            
-                        } catch let error {
-                            print("Localized Error: \(error.localizedDescription)")
-                            print("Error: \(error)")
-                        }
-//                        if let jsonResult = try? JSONDecoder().decode(WelcomeElement.self, from: data){
-//                            print(jsonResult)
-////                            completionHandler(.success(jsonResult))
-//                        }else{
-////                            completionHandler(.failure(.badJson))
+//        let url = URL(string: "https://wpt.woocer.com/wp-json/wc/v3/products?consumer_key=ck_85f212310cfff32728cc4c933331aa6bcf3002ef&consumer_secret=cs_ee784168289012a919a008985d2252fadecea2bb")
+//        var request = URLRequest(url: url!)
+//        request.httpMethod = "GET"
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//        let sessionConfig = URLSessionConfiguration.default
+//        sessionConfig.timeoutIntervalForRequest = 30.0
+//        sessionConfig.timeoutIntervalForResource = 30.0
+//        let session = URLSession(configuration: sessionConfig)
+//
+//        let task = session.dataTask(with: request) { [self] data, response, error in
+//
+//            if let httpResponse = response as? HTTPURLResponse {
+//                switch httpResponse.statusCode {
+//                case 200:
+//                    if let data = data{
+//                        do {
+//                            let dataString = String(data: data, encoding: .utf8)
+//                            let jsondata = dataString?.data(using: .utf8)
+//                            let result = try JSONDecoder().decode([ProductsDataModel].self, from: jsondata!)
+//                            print(result[0].id)
+//                            DispatchQueue.main.async {
+//                                let mainvc = Storyboard.Main.viewController(identifier: "MainViewController") as? MainViewController
+//                                let navController = UINavigationController(rootViewController: mainvc!)
+//
+//                                navController.modalPresentationStyle = .fullScreen
+//                                mainvc!.productsData = result
+//                                self.present(navController, animated: true, completion: nil)
+//                            }
+//
+//                        } catch let error {
+//                            print("Localized Error: \(error.localizedDescription)")
+//                            print("Error: \(error)")
 //                        }
-                    }
-                    break
-//                    completionHandler(false, nil, data)
-                case 400:
-                    break
-                    
-//                    completionHandler(true, "error" , nil)
-                    
-                    
-                default:
-                    break
-//                    completionHandler(true, "error" , nil)
-                }
-            }
-            
-//            if let httpError = error{
-//                Singleton.shared.getCrashAnalyticsManager().reportWithDomain(domain: session.debugDescription, code: -1001, errorMessage: ["functionName": url!.lastPathComponent, "errorMessage": httpError.localizedDescription])
-//                completionHandler(true, httpError.localizedDescription, nil)
+////                        if let jsonResult = try? JSONDecoder().decode(WelcomeElement.self, from: data){
+////                            print(jsonResult)
+//////                            completionHandler(.success(jsonResult))
+////                        }else{
+//////                            completionHandler(.failure(.badJson))
+////                        }
+//                    }
+//                    break
+////                    completionHandler(false, nil, data)
+//                case 400:
+//                    break
+//
+////                    completionHandler(true, "error" , nil)
+//
+//
+//                default:
+//                    break
+////                    completionHandler(true, "error" , nil)
+//                }
 //            }
+//
+////            if let httpError = error{
+////                Singleton.shared.getCrashAnalyticsManager().reportWithDomain(domain: session.debugDescription, code: -1001, errorMessage: ["functionName": url!.lastPathComponent, "errorMessage": httpError.localizedDescription])
+////                completionHandler(true, httpError.localizedDescription, nil)
+////            }
+//        }
+//        task.resume()
+        requestPrice()
+    }
+    
+    private func transitionToMain(products: [ProductsDataModel]) {
+        print(products[0].id)
+        let mainvc = Storyboard.Main.viewController(identifier: "MainViewController") as? MainViewController
+        let navController = UINavigationController(rootViewController: mainvc!)
+        
+        navController.modalPresentationStyle = .fullScreen
+        mainvc!.productsData = products
+        self.present(navController, animated: true, completion: nil)
+    }
+    
+    private func requestPrice() {
+      guard let fetcher = fetcher else { fatalError("Missing dependencies") }
+      fetcher.fetch { response in
+        guard let response = response else { return }
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.transitionToMain(products: response)
         }
-        task.resume()
+      }
     }
     
 }

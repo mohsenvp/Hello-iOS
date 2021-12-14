@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		82373683276795C800C4B9D1 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82373682276795C800C4B9D1 /* ProductDetailsViewController.swift */; };
 		8237368627679F1500C4B9D1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8237368527679F1500C4B9D1 /* UIView.swift */; };
+		825A2252276926850091D4F3 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A2251276926850091D4F3 /* MainViewModel.swift */; };
 		82923245276782B900C2F54B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82923244276782B900C2F54B /* UIImage.swift */; };
 		82B392392766548F00445135 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B392382766548F00445135 /* AppDelegate.swift */; };
 		82B3923B2766548F00445135 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3923A2766548F00445135 /* SceneDelegate.swift */; };
@@ -20,12 +21,17 @@
 		82B39259276655D000445135 /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B39258276655D000445135 /* TextFields.swift */; };
 		82B3925C276657D600445135 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3925B276657D600445135 /* LoginViewController.swift */; };
 		82B3925E27665B0200445135 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3925D27665B0200445135 /* MasterViewController.swift */; };
-		82B3926127665F8E00445135 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3926027665F8E00445135 /* APIManager.swift */; };
-		82B392652766807100445135 /* Singelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B392642766807100445135 /* Singelton.swift */; };
+		82B3926127665F8E00445135 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3926027665F8E00445135 /* Networking.swift */; };
 		82B392672766827600445135 /* ProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B392662766827600445135 /* ProductsModel.swift */; };
 		82B39269276693A700445135 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B39268276693A700445135 /* Storyboards.swift */; };
 		82B3926D27669E0500445135 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3926B27669E0500445135 /* ProductTableViewCell.swift */; };
 		82B3926E27669E0500445135 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82B3926C27669E0500445135 /* ProductTableViewCell.xib */; };
+		82DC3D3427695EA70051B63A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC3D3327695EA70051B63A /* Reachability.swift */; };
+		82F74EA62769018C00CEBA0E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F74EA52769018B00CEBA0E /* Endpoint.swift */; };
+		82F74EA82769019E00CEBA0E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F74EA72769019E00CEBA0E /* Error.swift */; };
+		82F74EAA276901B500CEBA0E /* ProductsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F74EA9276901B500CEBA0E /* ProductsResponse.swift */; };
+		82F74EAC276910D500CEBA0E /* ProductFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F74EAB276910D500CEBA0E /* ProductFetcher.swift */; };
+		82F74EAE2769164500CEBA0E /* SwinjectStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F74EAD2769164500CEBA0E /* SwinjectStoryboard.swift */; };
 		C89F91E9EB43161CA8155105 /* Pods_WoocerTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10A6913CE304F8EE049DB5F /* Pods_WoocerTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +40,7 @@
 		7352E9AAEB3AD9831E829BB8 /* Pods-WoocerTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoocerTest.release.xcconfig"; path = "Target Support Files/Pods-WoocerTest/Pods-WoocerTest.release.xcconfig"; sourceTree = "<group>"; };
 		82373682276795C800C4B9D1 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		8237368527679F1500C4B9D1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		825A2251276926850091D4F3 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		82923244276782B900C2F54B /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		82B392352766548F00445135 /* WoocerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoocerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B392382766548F00445135 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,12 +54,17 @@
 		82B39258276655D000445135 /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
 		82B3925B276657D600445135 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		82B3925D27665B0200445135 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		82B3926027665F8E00445135 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		82B392642766807100445135 /* Singelton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singelton.swift; sourceTree = "<group>"; };
+		82B3926027665F8E00445135 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		82B392662766827600445135 /* ProductsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsModel.swift; sourceTree = "<group>"; };
 		82B39268276693A700445135 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		82B3926B27669E0500445135 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		82B3926C27669E0500445135 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		82DC3D3327695EA70051B63A /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		82F74EA52769018B00CEBA0E /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		82F74EA72769019E00CEBA0E /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		82F74EA9276901B500CEBA0E /* ProductsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsResponse.swift; sourceTree = "<group>"; };
+		82F74EAB276910D500CEBA0E /* ProductFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFetcher.swift; sourceTree = "<group>"; };
+		82F74EAD2769164500CEBA0E /* SwinjectStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboard.swift; sourceTree = "<group>"; };
 		E10A6913CE304F8EE049DB5F /* Pods_WoocerTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoocerTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,7 +86,6 @@
 				52B123AE83FC01803B73EEB6 /* Pods-WoocerTest.debug.xcconfig */,
 				7352E9AAEB3AD9831E829BB8 /* Pods-WoocerTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -93,6 +104,14 @@
 				82373682276795C800C4B9D1 /* ProductDetailsViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		825A2250276926770091D4F3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				825A2251276926850091D4F3 /* MainViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		82B3922C2766548F00445135 = {
@@ -121,7 +140,7 @@
 				82B39251276654FB00445135 /* Resources */,
 				82B39250276654F100445135 /* Supports */,
 				82B3924E276654DF00445135 /* Models */,
-				82B3924D276654D700445135 /* ViewModels */,
+				825A2250276926770091D4F3 /* ViewModels */,
 				82B3924F276654E600445135 /* Controllers */,
 				82B3924C276654CF00445135 /* Views */,
 				82B392462766549000445135 /* Info.plist */,
@@ -139,17 +158,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		82B3924D276654D700445135 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		82B3924E276654DF00445135 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				82B392662766827600445135 /* ProductsModel.swift */,
+				82F74EA52769018B00CEBA0E /* Endpoint.swift */,
+				82F74EA72769019E00CEBA0E /* Error.swift */,
+				82F74EA9276901B500CEBA0E /* ProductsResponse.swift */,
+				82DC3D3327695EA70051B63A /* Reachability.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,6 +213,7 @@
 				82B39268276693A700445135 /* Storyboards.swift */,
 				82923244276782B900C2F54B /* UIImage.swift */,
 				8237368527679F1500C4B9D1 /* UIView.swift */,
+				82F74EAD2769164500CEBA0E /* SwinjectStoryboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,8 +229,8 @@
 		82B3925F27665F7A00445135 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				82B3926027665F8E00445135 /* APIManager.swift */,
-				82B392642766807100445135 /* Singelton.swift */,
+				82B3926027665F8E00445135 /* Networking.swift */,
+				82F74EAB276910D500CEBA0E /* ProductFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -344,20 +361,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82F74EA82769019E00CEBA0E /* Error.swift in Sources */,
 				82B3923D2766548F00445135 /* MainViewController.swift in Sources */,
 				82B392672766827600445135 /* ProductsModel.swift in Sources */,
+				82F74EAA276901B500CEBA0E /* ProductsResponse.swift in Sources */,
 				82B392392766548F00445135 /* AppDelegate.swift in Sources */,
 				82B3925E27665B0200445135 /* MasterViewController.swift in Sources */,
+				82F74EA62769018C00CEBA0E /* Endpoint.swift in Sources */,
+				82F74EAC276910D500CEBA0E /* ProductFetcher.swift in Sources */,
 				82B3923B2766548F00445135 /* SceneDelegate.swift in Sources */,
 				82B3925C276657D600445135 /* LoginViewController.swift in Sources */,
 				82B39269276693A700445135 /* Storyboards.swift in Sources */,
+				82F74EAE2769164500CEBA0E /* SwinjectStoryboard.swift in Sources */,
 				82B3926D27669E0500445135 /* ProductTableViewCell.swift in Sources */,
-				82B392652766807100445135 /* Singelton.swift in Sources */,
+				825A2252276926850091D4F3 /* MainViewModel.swift in Sources */,
 				82373683276795C800C4B9D1 /* ProductDetailsViewController.swift in Sources */,
 				8237368627679F1500C4B9D1 /* UIView.swift in Sources */,
 				82923245276782B900C2F54B /* UIImage.swift in Sources */,
 				82B39259276655D000445135 /* TextFields.swift in Sources */,
-				82B3926127665F8E00445135 /* APIManager.swift in Sources */,
+				82DC3D3427695EA70051B63A /* Reachability.swift in Sources */,
+				82B3926127665F8E00445135 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
